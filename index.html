@@ -1,0 +1,1677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Md. Lizon Sarkar - WordPress Development Specialist for Bangladesh. Expert in Job Portals, Payment Gateway Integration (bKash/Nagad), Custom Themes & E-commerce Solutions.">
+    <meta name="keywords" content="WordPress Developer Bangladesh, bKash Integration, Nagad Payment, Job Portal Development, Lizon Web Studio">
+    <meta name="author" content="Md. Lizon Sarkar">
+    <title>Md. Lizon Sarkar - WordPress Developer | Lizon Web Studio</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1e40af;
+            --accent: #f97316;
+            --success: #22c55e;
+            --dark: #1f2937;
+            --light: #f9fafb;
+            --gray: #6b7280;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        /* Header/Navigation */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .logo-sub {
+            font-size: 0.75rem;
+            color: var(--gray);
+            font-weight: 400;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #3b82f6 100%);
+            color: white;
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.875rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        .btn-accent {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-accent:hover {
+            background: #ea580c;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(249, 115, 22, 0.4);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .btn-whatsapp:hover {
+            background: #1faa52;
+            transform: translateY(-2px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            font-size: 1.125rem;
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 1.125rem;
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .about-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .highlight-item {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .highlight-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-item h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Services Section */
+        .services-bg {
+            background: var(--light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--primary);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .service-card p {
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+
+        .service-card ul {
+            list-style: none;
+            color: var(--gray);
+        }
+
+        .service-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .service-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .skill-category {
+            margin-bottom: 2.5rem;
+        }
+
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .skill-tag {
+            background: var(--light);
+            padding: 0.625rem 1.25rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            color: var(--dark);
+            font-weight: 500;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .skill-tag:hover {
+            background: white;
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* Portfolio Section */
+        .portfolio-bg {
+            background: var(--light);
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, var(--primary), #3b82f6);
+            color: white;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .project-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--accent);
+            color: white;
+            padding: 0.375rem 0.875rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .project-header h3 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-header p {
+            opacity: 0.95;
+            font-size: 1rem;
+        }
+
+        .project-body {
+            padding: 2rem;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .meta-icon {
+            color: var(--primary);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--gray);
+            padding: 0.5rem;
+            background: var(--light);
+            border-radius: 6px;
+        }
+
+        .feature-item:before {
+            content: "✓";
+            color: var(--success);
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .tech-tag {
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .project-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        /* Specialization Section */
+        .specialization-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .spec-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .spec-card:hover {
+            transform: translateX(5px);
+        }
+
+        .spec-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .spec-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .spec-card p {
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        /* Process Section */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .step {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .step:hover {
+            transform: translateY(-5px);
+        }
+
+        .step-number {
+            background: var(--accent);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+
+        .step h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .step p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* Pricing Section */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .pricing-card.featured {
+            border: 3px solid var(--accent);
+        }
+
+        .featured-badge {
+            background: var(--accent);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .pricing-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin: 1rem 0;
+        }
+
+        .price-note {
+            font-size: 0.875rem;
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 1.5rem 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 0.75rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--gray);
+        }
+
+        .pricing-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, #3b82f6 100%);
+            color: white;
+            text-align: center;
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid2" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid2)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+        }
+
+        .contact-options {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .availability {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            max-width: 800px;
+            margin: 2rem auto 0;
+        }
+
+        .availability-item {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        .availability-item:before {
+            content: "✓";
+            color: var(--success);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero h2 {
+                font-size: 1.25rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-stats {
+                gap: 1.5rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 2rem 1rem;
+            }
+
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header>
+        <nav>
+            <div>
+                <div class="logo">Lizon Web Studio</div>
+                <div class="logo-sub">by Md. Lizon Sarkar</div>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">🇧🇩 Bangladesh Market Specialist</div>
+            <h1>Md. Lizon Sarkar</h1>
+            <h2>WordPress Development Expert</h2>
+            <p>Specialized in Job Portals, E-commerce Solutions & Payment Gateway Integration (bKash/Nagad). Building premium, production-ready WordPress themes and custom solutions for Bangladesh market.</p>
+            
+            <div class="cta-buttons">
+                <a href="#portfolio" class="btn btn-primary">View Portfolio</a>
+                <a href="https://wa.me/8801982655261" class="btn btn-whatsapp" target="_blank">💬 WhatsApp</a>
+                <a href="mailto:info.lizonsarkar@gmail.com" class="btn btn-secondary">📧 Email Me</a>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">5+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Projects Completed</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Client Satisfaction</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">⚡</span>
+                    <span class="stat-label">Fast Delivery</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <p>Hi! I'm <strong>Md. Lizon Sarkar</strong>, founder of <strong>Lizon Web Studio</strong>. With over 5 years of experience, I specialize in creating enterprise-level WordPress solutions tailored for the Bangladesh market.</p>
+            
+            <p>My expertise lies in building comprehensive job portals, e-commerce platforms, and custom themes with seamless payment gateway integrations. I understand the unique challenges of Bangladesh's digital landscape and create solutions that work flawlessly with local payment systems, Bengali language support, and mobile-first design.</p>
+
+            <div class="about-highlights">
+                <div class="highlight-item">
+                    <div class="highlight-icon">💻</div>
+                    <h3>Full-Stack Developer</h3>
+                    <p>WordPress, PHP, JavaScript</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">🎯</div>
+                    <h3>Bangladesh Expert</h3>
+                    <p>bKash, Nagad, Local Systems</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">🚀</div>
+                    <h3>Quality Focused</h3>
+                    <p>Production-Ready Code</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">📱</div>
+                    <h3>Mobile First</h3>
+                    <p>Responsive Design</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-bg">
+        <div class="container">
+            <h2 class="section-title">Services I Offer</h2>
+            <p class="section-subtitle">Comprehensive WordPress solutions designed for Bangladesh businesses</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Custom WordPress Themes</h3>
+                    <p>Professional, fully responsive themes built from scratch</p>
+                    <ul>
+                        <li>Custom post types & taxonomies</li>
+                        <li>Advanced meta boxes</li>
+                        <li>Responsive design</li>
+                        <li>SEO optimized</li>
+                        <li>Bengali language support</li>
+                        <li>Fast loading performance</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">💼</div>
+                    <h3>Job Portal Development</h3>
+                    <p>Complete recruitment platforms with employer/employee systems</p>
+                    <ul>
+                        <li>Advanced job posting system</li>
+                        <li>Resume builder with PDF export</li>
+                        <li>Employer dashboards</li>
+                        <li>Application tracking</li>
+                        <li>District-based locations</li>
+                        <li>Payment integration</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🛒</div>
+                    <h3>E-commerce Solutions</h3>
+                    <p>Full-featured online stores with Bangladesh payment gateways</p>
+                    <ul>
+                        <li>WooCommerce customization</li>
+                        <li>bKash & Nagad integration</li>
+                        <li>Multi-vendor support</li>
+                        <li>Inventory management</li>
+                        <li>Order tracking system</li>
+                        <li>Mobile-optimized checkout</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">💳</div>
+                    <h3>Payment Gateway Integration</h3>
+                    <p>Seamless integration of Bangladesh payment systems</p>
+                    <ul>
+                        <li>bKash merchant integration</li>
+                        <li>Nagad payment gateway</li>
+                        <li>Rocket & SSL Commerce</li>
+                        <li>AamarPay integration</li>
+                        <li>Secure transactions</li>
+                        <li>Real-time verification</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🏭</div>
+                    <h3>Industry-Specific Solutions</h3>
+                    <p>Tailored websites for specialized industries</p>
+                    <ul>
+                        <li>RMG/Garments portals</li>
+                        <li>Quality management systems</li>
+                        <li>Educational platforms</li>
+                        <li>Restaurant websites</li>
+                        <li>Corporate solutions</li>
+                        <li>Inventory systems</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📝</div>
+                    <h3>Blogger Template Development</h3>
+                    <p>Modern, feature-rich Blogger templates</p>
+                    <ul>
+                        <li>Magazine-style designs</li>
+                        <li>PWA support</li>
+                        <li>Source code protection</li>
+                        <li>Breaking news tickers</li>
+                        <li>SEO optimized</li>
+                        <li>Ad-ready layouts</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio-bg">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">Some of my recent work showcasing expertise in WordPress development</p>
+
+            <!-- Project 1: BD Garments Career -->
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-badge">Featured</div>
+                    <h3>BD Garments Career</h3>
+                    <p>Complete Job Portal for Bangladesh RMG Industry</p>
+                </div>
+                <div class="project-body">
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <span class="meta-icon">🏷️</span>
+                            <span>WordPress Custom Theme</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-icon">🏭</span>
+                            <span>RMG Industry Portal</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-icon">⚙️</span>
+                            <span>8 Custom Post Types</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-icon">✅</span>
+                            <span>Production Ready</span>
+                        </div>
+                    </div>
+
+                    <p style="color: var(--gray); margin-bottom: 1.5rem;">
+                        A comprehensive job portal platform specifically designed for Bangladesh's Ready Made Garments (RMG) industry. Features include advanced job posting, employer registration, resume building, payment integration, and mobile-responsive design optimized for local users.
+                    </p>
+
+                    <h4 style="margin-bottom: 1rem; color: var(--primary);">Key Features:</h4>
+                    <div class="features-grid">
+                        <div class="feature-item">Advanced job posting system</div>
+                        <div class="feature-item">Employer/Employee dashboards</div>
+                        <div class="feature-item">Resume builder with PDF export</div>
+                        <div class="feature-item">bKash & Nagad integration</div>
+                        <div class="feature-item">District-based location system</div>
+                        <div class="feature-item">Application tracking</div>
+                        <div class="feature-item">Rewards & gamification</div>
+                        <div class="feature-item">Insurance affiliate system</div>
+                        <div class="feature-item">Mobile app functionality</div>
+                        <div class="feature-item">Bengali language support</div>
+                        <div class="feature-item">SEO optimized structure</div>
+                        <div class="feature-item">Fully responsive design</div>
+                    </div>
+
+                    <h4 style="margin: 1.5rem 0 1rem; color: var(--primary);">Tech Stack:</h4>
+                    <div class="tech-stack">
+                        <span class="tech-tag">WordPress</span>
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">REST API</span>
+                        <span class="tech-tag">Payment APIs</span>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="#contact" class="btn btn-accent">Request Demo</a>
+                        <a href="#contact" class="btn btn-secondary">Get Similar Solution</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: SellZoneBD -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>SellZoneBD Marketplace</h3>
+                    <p>Multi-Vendor Digital Products Platform</p>
+                </div>
+                <div class="project-body">
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <span class="meta-icon">🏷️</span>
+                            <span>WordPress & Blogger</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-icon">🛒</span>
+                            <span>Digital Marketplace</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-icon">👥</span>
+                            <span>Multi-Vendor System</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-icon">💰</span>
+                            <span>Commission-Based</span>
+                        </div>
+                    </div>
+
+                    <p style="color: var(--gray); margin-bottom: 1.5rem;">
+                        A comprehensive digital products marketplace supporting multiple vendors with automated file delivery, payment processing, and vendor management. Built for both WordPress and Blogger platforms to maximize reach.
+                    </p>
+
+                    <h4 style="margin-bottom: 1rem; color: var(--primary);">Key Features:</h4>
+                    <div class="features-grid">
+                        <div class="feature-item">Multi-vendor support system</div>
+                        <div class="feature-item">Secure digital file delivery</div>
+                        <div class="feature-item">Payment gateway integration</div>
+                        <div class="feature-item">Vendor dashboards & analytics</div>
+                        <div class="feature-item">Automated commission system</div>
+                        <div class="feature-item">Product review & rating</div>
+                        <div class="feature-item">Sales tracking & reports</div>
+                        <div class="feature-item">Automated payout system</div>
+                    </div>
+
+                    <h4 style="margin: 1.5rem 0 1rem; color: var(--primary);">Tech Stack:</h4>
+                    <div class="tech-stack">
+                        <span class="tech-tag">WordPress</span>
+                        <span class="tech-tag">WooCommerce</span>
+                        <span class="tech-tag">Blogger</span>
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Payment APIs</span>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="#contact" class="btn btn-accent">View Case Study</a>
+                        <a href="#contact" class="btn btn-secondary">Build Marketplace</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: Magazine Templates -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Premium Blogger Magazine Templates</h3>
+                    <p>Modern News & Magazine Themes with Advanced Features</p>
+                </div>
+                <div class="project-body">
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <span class="meta-icon">🏷️</span>
+                            <span>Blogger Platform</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-icon">📰</span>
+                            <span>Magazine/News Style</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-icon">📱</span>
+                            <span>PWA Supported</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-icon">🔒</span>
+                            <span>Code Protected</span>
+                        </div>
+                    </div>
+
+                    <p style="color: var(--gray); margin-bottom: 1.5rem;">
+                        Collection of premium magazine and news templates for Blogger platform with modern design, PWA support, and advanced features. Perfect for news websites, blogs, and content publishers.
+                    </p>
+
+                    <h4 style="margin-bottom: 1rem; color: var(--primary);">Key Features:</h4>
+                    <div class="features-grid">
+                        <div class="feature-item">PWA (Progressive Web App)</div>
+                        <div class="feature-item">Source code protection</div>
+                        <div class="feature-item">Breaking news ticker</div>
+                        <div class="feature-item">Membership system</div>
+                        <div class="feature-item">Ad optimization zones</div>
+                        <div class="feature-item">SEO optimized structure</div>
+                        <div class="feature-item">Mobile-first responsive</div>
+                        <div class="feature-item">Fast loading speed</div>
+                        <div class="feature-item">Social media integration</div>
+                        <div class="feature-item">Multiple layout options</div>
+                    </div>
+
+                    <h4 style="margin: 1.5rem 0 1rem; color: var(--primary);">Tech Stack:</h4>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Blogger XML</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">PWA</span>
+                        <span class="tech-tag">Responsive Design</span>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="#contact" class="btn btn-accent">View Templates</a>
+                        <a href="#contact" class="btn btn-secondary">Custom Design</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4: Other Solutions -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Custom Business Solutions</h3>
+                    <p>Industry-Specific Websites & Management Systems</p>
+                </div>
+                <div class="project-body">
+                    <p style="color: var(--gray); margin-bottom: 1.5rem;">
+                        Comprehensive portfolio of custom websites and management systems built for various industries including restaurants, educational institutions, quality management, and corporate businesses.
+                    </p>
+
+                    <h4 style="margin-bottom: 1rem; color: var(--primary);">Project Portfolio:</h4>
+                    <div class="features-grid">
+                        <div class="feature-item">Restaurant websites with online ordering</div>
+                        <div class="feature-item">Quality management systems (ISO 9001:2015)</div>
+                        <div class="feature-item">Educational institute portals</div>
+                        <div class="feature-item">Corporate business websites</div>
+                        <div class="feature-item">E-commerce platforms</div>
+                        <div class="feature-item">Inventory management systems</div>
+                        <div class="feature-item">Booking & reservation systems</div>
+                        <div class="feature-item">Custom CRM solutions</div>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="#contact" class="btn btn-accent">Discuss Your Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="container">
+        <h2 class="section-title">Technical Skills</h2>
+        <p class="section-subtitle">Comprehensive expertise in modern web development technologies</p>
+        
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>💻 Frontend Development</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">HTML5</span>
+                    <span class="skill-tag">CSS3</span>
+                    <span class="skill-tag">JavaScript (ES6+)</span>
+                    <span class="skill-tag">jQuery</span>
+                    <span class="skill-tag">Bootstrap</span>
+                    <span class="skill-tag">Tailwind CSS</span>
+                    <span class="skill-tag">Responsive Design</span>
+                    <span class="skill-tag">Mobile-First</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>⚙️ Backend Development</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">PHP</span>
+                    <span class="skill-tag">WordPress Core</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">REST API</span>
+                    <span class="skill-tag">AJAX</span>
+                    <span class="skill-tag">Custom Post Types</span>
+                    <span class="skill-tag">WordPress Hooks</span>
+                    <span class="skill-tag">Database Design</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>🎨 WordPress Expertise</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Theme Development</span>
+                    <span class="skill-tag">Plugin Development</span>
+                    <span class="skill-tag">WooCommerce</span>
+                    <span class="skill-tag">Custom Taxonomies</span>
+                    <span class="skill-tag">Meta Boxes</span>
+                    <span class="skill-tag">Shortcodes</span>
+                    <span class="skill-tag">Widgets</span>
+                    <span class="skill-tag">Gutenberg Blocks</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>💳 Payment Integration</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">bKash Merchant</span>
+                    <span class="skill-tag">Nagad Gateway</span>
+                    <span class="skill-tag">Rocket Payment</span>
+                    <span class="skill-tag">SSLCommerz</span>
+                    <span class="skill-tag">AamarPay</span>
+                    <span class="skill-tag">Payment APIs</span>
+                    <span class="skill-tag">Secure Transactions</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>🌐 CMS & Platforms</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">WordPress</span>
+                    <span class="skill-tag">Blogger</span>
+                    <span class="skill-tag">WooCommerce</span>
+                    <span class="skill-tag">Blogger XML</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>🇧🇩 Bangladesh Specialization</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Bengali Language Support</span>
+                    <span class="skill-tag">Local Payment Gateways</span>
+                    <span class="skill-tag">District-Based Systems</span>
+                    <span class="skill-tag">Mobile Financial Services</span>
+                    <span class="skill-tag">Local Business Logic</span>
+                    <span class="skill-tag">Cultural Adaptation</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>🛠️ Tools & Technologies</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Git & GitHub</span>
+                    <span class="skill-tag">VS Code</span>
+                    <span class="skill-tag">Chrome DevTools</span>
+                    <span class="skill-tag">Figma</span>
+                    <span class="skill-tag">Adobe XD</span>
+                    <span class="skill-tag">cPanel</span>
+                    <span class="skill-tag">PWA</span>
+                    <span class="skill-tag">SEO Tools</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>📊 Additional Skills</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">SEO Optimization</span>
+                    <span class="skill-tag">Performance Optimization</span>
+                    <span class="skill-tag">Security Best Practices</span>
+                    <span class="skill-tag">API Integration</span>
+                    <span class="skill-tag">Responsive Testing</span>
+                    <span class="skill-tag">Cross-Browser Compatibility</span>
+                    <span class="skill-tag">Documentation</span>
+                    <span class="skill-tag">Client Training</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialization Section -->
+    <section class="services-bg">
+        <div class="container">
+            <h2 class="section-title">🇧🇩 Bangladesh Market Expertise</h2>
+            <p class="section-subtitle">Deep understanding of local market needs and digital ecosystem</p>
+            
+            <div class="specialization-grid">
+                <div class="spec-card">
+                    <div class="spec-icon">💳</div>
+                    <h3>Local Payment Systems</h3>
+                    <p>Expert integration of Bangladesh's mobile financial services including bKash, Nagad, and Rocket. Real-world experience with merchant APIs, webhook handling, and secure transaction processing tailored for local users.</p>
+                </div>
+
+                <div class="spec-card">
+                    <div class="spec-icon">🔤</div>
+                    <h3>Bengali Language Support</h3>
+                    <p>Proper Unicode implementation, Bengali font optimization, and seamless bilingual functionality. All projects include native Bengali language support with proper text rendering and RTL capability when needed.</p>
+                </div>
+
+                <div class="spec-card">
+                    <div class="spec-icon">🏢</div>
+                    <h3>Industry Knowledge</h3>
+                    <p>Specialized understanding of Bangladesh's RMG industry, business processes, district-based location systems, and local compliance requirements. Solutions designed with local business logic in mind.</p>
+                </div>
+
+                <div class="spec-card">
+                    <div class="spec-icon">📱</div>
+                    <h3>Mobile-First Design</h3>
+                    <p>Optimized for Bangladesh's mobile-dominant internet usage (70%+ mobile users). Designs work flawlessly on slow connections, minimize data usage, and provide excellent user experience on all devices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="container">
+        <h2 class="section-title">My Work Process</h2>
+        <p class="section-subtitle">A transparent, collaborative approach to deliver excellence</p>
+
+        <div class="process-steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Discovery Call</h3>
+                <p>Free consultation to understand your requirements, discuss technical feasibility, and provide timeline & budget estimates</p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Planning & Design</h3>
+                <p>Create wireframes, mockups, and detailed feature specifications. Break down project into clear milestones with deliverables</p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Development</h3>
+                <p>Agile development with weekly progress updates, staging site access for real-time testing, and continuous feedback implementation</p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Testing & Launch</h3>
+                <p>Comprehensive testing across devices, final deployment, complete documentation, training sessions, and 30-day support included</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="services-bg">
+        <div class="container">
+            <h2 class="section-title">Service Packages</h2>
+            <p class="section-subtitle">Transparent pricing for different project sizes. All packages include source code, documentation, and support.</p>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-icon">🥉</div>
+                    <h3>Starter Package</h3>
+                    <div class="price">$500+</div>
+                    <div class="price-note">Basic WordPress Website</div>
+                    <ul class="pricing-features">
+                        <li>Custom WordPress theme</li>
+                        <li>Up to 5 pages</li>
+                        <li>Responsive design</li>
+                        <li>Contact form integration</li>
+                        <li>Basic SEO setup</li>
+                        <li>Admin training</li>
+                        <li>7-10 days delivery</li>
+                        <li>15 days support</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-accent">Get Started</a>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="featured-badge">Most Popular</div>
+                    <div class="pricing-icon">🥈</div>
+                    <h3>Business Package</h3>
+                    <div class="price">$1,200+</div>
+                    <div class="price-note">Complete Business Solution</div>
+                    <ul class="pricing-features">
+                        <li>Custom WordPress theme</li>
+                        <li>Up to 10+ pages</li>
+                        <li>Custom functionality</li>
+                        <li>Payment gateway integration</li>
+                        <li>Advanced SEO optimization</li>
+                        <li>Admin panel customization</li>
+                        <li>Complete training & docs</li>
+                        <li>14-21 days delivery</li>
+                        <li>30 days support</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-accent">Get Started</a>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-icon">🥇</div>
+                    <h3>Enterprise Package</h3>
+                    <div class="price">$2,500+</div>
+                    <div class="price-note">Full Portal/Platform</div>
+                    <ul class="pricing-features">
+                        <li>Fully custom theme</li>
+                        <li>Unlimited pages</li>
+                        <li>Complex custom features</li>
+                        <li>Multiple integrations</li>
+                        <li>User role management</li>
+                        <li>Custom dashboards</li>
+                        <li>Priority development</li>
+                        <li>30-45 days delivery</li>
+                        <li>60 days support + maintenance</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-accent">Get Started</a>
+                </div>
+            </div>
+
+            <p style="text-align: center; margin-top: 2rem; color: var(--gray); font-style: italic;">
+                * Custom quotes available for unique requirements. Payment milestones: 40% upfront, 40% at midpoint, 20% on completion.
+            </p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Start Your Project?</h2>
+            <p>Let's discuss how I can help build your perfect WordPress solution</p>
+
+            <div class="contact-options">
+                <a href="mailto:info.lizonsarkar@gmail.com" class="btn btn-primary">📧 Email Me</a>
+                <a href="https://wa.me/8801982655261" class="btn btn-whatsapp" target="_blank">💬 WhatsApp Chat</a>
+            </div>
+
+            <div class="availability">
+                <div class="availability-item">Freelance Projects</div>
+                <div class="availability-item">Long-term Contracts</div>
+                <div class="availability-item">Consultation & Support</div>
+                <div class="availability-item">Custom Solutions</div>
+            </div>
+
+            <div style="margin-top: 2rem; font-size: 0.95rem;">
+                <p><strong>Response Time:</strong> Within 24 hours</p>
+                <p><strong>Available:</strong> Monday - Saturday (9 AM - 8 PM BDT)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Lizon Web Studio</h4>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.8; margin-top: 0.5rem;">
+                    Professional WordPress development services specializing in Bangladesh market solutions.
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#services">WordPress Development</a></li>
+                    <li><a href="#services">Job Portal Solutions</a></li>
+                    <li><a href="#services">E-commerce Development</a></li>
+                    <li><a href="#services">Payment Integration</a></li>
+                    <li><a href="#services">Custom Solutions</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <ul class="footer-links">
+                    <li>📧 info.lizonsarkar@gmail.com</li>
+                    <li>📱 +880 1982-655261</li>
+                    <li>📍 Dhaka, Bangladesh</li>
+                    <li>🕒 Mon-Sat: 9 AM - 8 PM BDT</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Lizon Web Studio by Md. Lizon Sarkar | WordPress Development Specialist for Bangladesh Market</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (mobileMenuBtn && navLinks) {
+            mobileMenuBtn.addEventListener('click', () => {
+                if (navLinks.style.display === 'flex') {
+                    navLinks.style.display = 'none';
+                } else {
+                    navLinks.style.display = 'flex';
+                    navLinks.style.flexDirection = 'column';
+                    navLinks.style.position = 'absolute';
+                    navLinks.style.top = '100%';
+                    navLinks.style.left = '0';
+                    navLinks.style.right = '0';
+                    navLinks.style.background = 'white';
+                    navLinks.style.padding = '1rem';
+                    navLinks.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+                    navLinks.style.zIndex = '999';
+                }
+            });
+
+            // Close menu when clicking a link
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.style.display = 'none';
+                });
+            });
+        }
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.service-card, .project-card, .spec-card, .step, .pricing-card, .skill-category').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add active state to navigation on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section[id]');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
