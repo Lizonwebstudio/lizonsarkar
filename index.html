@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional Web Development, SEO, Email Marketing & Digital Marketing Services">
+    <meta name="keywords" content="web development, wordpress, blogger, seo, youtube seo, email marketing, cpa marketing, affiliate marketing">
+    <meta name="author" content="Digital Marketing Expert">
+    <title>Professional Digital Marketing & Web Development Services</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Header Section -->
+    <header id="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div class="logo">
+                        <a href="#home">
+                            <i class="fas fa-code"></i>
+                            <span>Digital Expert</span>
+                        </a>
+                    </div>
+                    
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="#home" class="nav-link active">Home</a></li>
+                        <li><a href="#about" class="nav-link">About</a></li>
+                        <li><a href="#services" class="nav-link">Services</a></li>
+                        <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                        <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                    
+                    <div class="nav-buttons">
+                        <button class="theme-toggle" id="themeToggle">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                        <button class="menu-toggle" id="menuToggle">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Slider Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-slider">
+            <!-- Slide 1 -->
+            <div class="slide active">
+                <div class="slide-bg" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 class="hero-title animate-text">
+                            <span>Web Development</span>
+                            <span>Expert</span>
+                        </h1>
+                        <p class="hero-subtitle">Creating stunning websites that drive results</p>
+                        <div class="hero-buttons">
+                            <a href="#services" class="btn btn-primary">Explore Services</a>
+                            <a href="#contact" class="btn btn-outline">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide">
+                <div class="slide-bg" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 class="hero-title animate-text">
+                            <span>SEO & Digital</span>
+                            <span>Marketing</span>
+                        </h1>
+                        <p class="hero-subtitle">Boost your online presence and grow your business</p>
+                        <div class="hero-buttons">
+                            <a href="#services" class="btn btn-primary">Learn More</a>
+                            <a href="#portfolio" class="btn btn-outline">View Work</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide">
+                <div class="slide-bg" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 class="hero-title animate-text">
+                            <span>WordPress & Blogger</span>
+                            <span>Themes</span>
+                        </h1>
+                        <p class="hero-subtitle">Premium themes designed for success</p>
+                        <div class="hero-buttons">
+                            <a href="#portfolio" class="btn btn-primary">View Themes</a>
+                            <a href="#contact" class="btn btn-outline">Hire Me</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slider Controls -->
+        <div class="slider-controls">
+            <button class="slider-btn prev" id="prevSlide"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-btn next" id="nextSlide"><i class="fas fa-chevron-right"></i></button>
+        </div>
+
+        <!-- Slider Dots -->
+        <div class="slider-dots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+        </div>
+
+        <!-- Scroll Down Indicator -->
+        <div class="scroll-down">
+            <a href="#about">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">About Me</span>
+                <h2 class="section-title">Professional Digital Expert</h2>
+                <p class="section-description">Passionate about creating exceptional digital experiences</p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="image-wrapper">
+                        <img src="images/profile.jpg" alt="Profile">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3>8+ Years</h3>
+                                <p>Experience</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-text">
+                    <h3>Hi, I'm a Digital Marketing & Web Development Expert</h3>
+                    <p>With over 8 years of experience in the digital marketing and web development industry, I specialize in creating comprehensive solutions that help businesses grow online. From stunning websites to effective marketing strategies, I deliver results that matter.</p>
+                    
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <h4><span class="counter">500</span>+</h4>
+                            <p>Projects Done</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4><span class="counter">300</span>+</h4>
+                            <p>Happy Clients</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4><span class="counter">50</span>+</h4>
+                            <p>Awards Won</p>
+                        </div>
+                    </div>
+
+                    <div class="about-skills">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>Web Development</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>SEO & Marketing</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>WordPress/Blogger</span>
+                                <span>98%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="98"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="btn btn-primary">Hire Me Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">What I Do</span>
+                <h2 class="section-title">My Services</h2>
+                <p class="section-description">Comprehensive digital solutions for your business</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Custom responsive websites built with modern technologies. Fast, secure, and user-friendly solutions tailored to your needs.</p>
+                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Marketing</h3>
+                    <p>Strategic email campaigns that engage your audience and drive conversions. Complete automation and analytics included.</p>
+                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Website SEO</h3>
+                    <p>Comprehensive SEO strategies to improve your search rankings and increase organic traffic. Technical and content optimization.</p>
+                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <h3>YouTube SEO</h3>
+                    <p>Video optimization for maximum visibility. Keyword research, metadata optimization, and proven growth strategies.</p>
+                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>CPA Marketing</h3>
+                    <p>Performance-based marketing campaigns. Expert in lead generation and conversion optimization strategies.</p>
+                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Affiliate Marketing</h3>
+                    <p>Build profitable affiliate partnerships. Strategic promotion and commission-based revenue generation systems.</p>
+                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="700">
+                    <div class="service-icon">
+                        <i class="fab fa-blogger"></i>
+                    </div>
+                    <h3>Blogger Development</h3>
+                    <p>Custom Blogger templates with modern features. Premium designs optimized for performance and monetization.</p>
+                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="800">
+                    <div class="service-icon">
+                        <i class="fab fa-wordpress"></i>
+                    </div>
+                    <h3>WordPress Themes</h3>
+                    <p>Professional WordPress theme development. Custom solutions tailored to your business needs and brand identity.</p>
+                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">My Work</span>
+                <h2 class="section-title">Recent Projects</h2>
+                <p class="section-description">Check out some of my latest projects</p>
+            </div>
+
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="web">Web Design</button>
+                <button class="filter-btn" data-filter="wordpress">WordPress</button>
+                <button class="filter-btn" data-filter="blogger">Blogger</button>
+                <button class="filter-btn" data-filter="seo">SEO</button>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="web wordpress">
+                    <div class="portfolio-image">
+                        <img src="https://via.placeholder.com/400x300/667eea/ffffff?text=Project+1" alt="Project 1">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3>E-Commerce Website</h3>
+                                <p>WordPress Development</p>
+                                <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="blogger">
+                    <div class="portfolio-image">
+                        <img src="https://via.placeholder.com/400x300/f5576c/ffffff?text=Project+2" alt="Project 2">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3>Magazine Blog Theme</h3>
+                                <p>Blogger Template</p>
+                                <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="seo">
+                    <div class="portfolio-image">
+                        <img src="https://via.placeholder.com/400x300/00f2fe/ffffff?text=Project+3" alt="Project 3">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3>SEO Campaign</h3>
+                                <p>Digital Marketing</p>
+                                <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-image">
+                        <img src="https://via.placeholder.com/400x300/764ba2/ffffff?text=Project+4" alt="Project 4">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3>Corporate Website</h3>
+                                <p>Web Development</p>
+                                <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="wordpress">
+                    <div class="portfolio-image">
+                        <img src="https://via.placeholder.com/400x300/f093fb/ffffff?text=Project+5" alt="Project 5">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3>Business Theme</h3>
+                                <p>WordPress Theme</p>
+                                <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="blogger seo">
+                    <div class="portfolio-image">
+                        <img src="https://via.placeholder.com/400x300/4facfe/ffffff?text=Project+6" alt="Project 6">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3>SEO Blog</h3>
+                                <p>Blogger + SEO</p>
+                                <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Client Reviews</span>
+                <h2 class="section-title">What Clients Say</h2>
+                <p class="section-description">Trusted by businesses worldwide</p>
+            </div>
+
+            <div class="testimonials-slider">
+                <div class="testimonial-card active">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Excellent work! The website exceeded our expectations. Professional, responsive, and delivered on time. Highly recommended for any web development project."</p>
+                        <div class="client-info">
+                            <img src="https://via.placeholder.com/80x80/667eea/ffffff?text=JD" alt="Client">
+                            <div class="client-details">
+                                <h4>John Doe</h4>
+                                <p>CEO, Tech Company</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Outstanding SEO results! Our organic traffic increased by 300% in just 3 months. The team is knowledgeable, professional, and truly cares about results."</p>
+                        <div class="client-info">
+                            <img src="https://via.placeholder.com/80x80/f5576c/ffffff?text=SS" alt="Client">
+                            <div class="client-details">
+                                <h4>Sarah Smith</h4>
+                                <p>Marketing Director</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"The WordPress theme is absolutely beautiful and works flawlessly. Great attention to detail and excellent customer support. Worth every penny!"</p>
+                        <div class="client-info">
+                            <img src="https://via.placeholder.com/80x80/00f2fe/ffffff?text=MJ" alt="Client">
+                            <div class="client-details">
+                                <h4>Michael Johnson</h4>
+                                <p>Blogger</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-controls">
+                <button class="testimonial-btn prev" id="prevTestimonial"><i class="fas fa-chevron-left"></i></button>
+                <button class="testimonial-btn next" id="nextTestimonial"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Get In Touch</span>
+                <h2 class="section-title">Contact Me</h2>
+                <p class="section-description">Let's discuss your project</p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Address</h3>
+                        <p>Dhaka, Bangladesh</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Phone</h3>
+                        <p>+880 1XXX-XXXXXX</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p>your.email@example.com</p>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" class="form-control" rows="6" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <div class="form-message"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>About</h3>
+                    <p>Professional web development and digital marketing services. Helping businesses grow online with cutting-edge solutions.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#services">Web Development</a></li>
+                        <li><a href="#services">SEO Services</a></li>
+                        <li><a href="#services">Email Marketing</a></li>
+                        <li><a href="#services">WordPress Themes</a></li>
+                        <li><a href="#services">Blogger Templates</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get latest updates and news</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Digital Expert. All Rights Reserved. | Designed with <i class="fas fa-heart"></i> by <a href="#">Lizon Web Studio</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll To Top Button -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>
