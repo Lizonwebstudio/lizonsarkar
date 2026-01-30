@@ -4,18 +4,587 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Professional Web Development, SEO, Email Marketing & Digital Marketing Services">
-    <meta name="keywords" content="web development, wordpress, blogger, seo, youtube seo, email marketing, cpa marketing, affiliate marketing">
-    <meta name="author" content="Digital Marketing Expert">
-    <title>Professional Digital Marketing & Web Development Services</title>
+    <title>Professional Portfolio - Web Development & Digital Marketing</title>
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* INLINE CSS - All styles embedded */
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --accent-color: #f5576c;
+            --text-dark: #2d3748;
+            --text-light: #718096;
+            --bg-light: #f7fafc;
+            --bg-white: #ffffff;
+            --border-color: #e2e8f0;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Preloader */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s;
+        }
+        
+        #preloader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #eee;
+            border-top-color: var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Header */
+        #header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .navbar {
+            padding: 20px 0;
+        }
+        
+        .nav-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-link {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary-color);
+        }
+        
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-dark);
+            transition: var(--transition);
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-title {
+            font-size: 64px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        
+        .hero-subtitle {
+            font-size: 24px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border-color: white;
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary-color);
+        }
+        
+        /* Section Styles */
+        .section-padding {
+            padding: 100px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-subtitle {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        
+        .section-title {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .section-description {
+            font-size: 18px;
+            color: var(--text-light);
+        }
+        
+        /* About Section */
+        .about-section {
+            background: var(--bg-light);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        }
+        
+        .about-text h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        .about-text p {
+            font-size: 16px;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .stat-item h4 {
+            font-size: 36px;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        .stat-item p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            font-size: 32px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .service-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        .service-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: var(--bg-light);
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 50px;
+        }
+        
+        .info-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .info-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            font-size: 24px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+        }
+        
+        .info-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .social-link {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            color: var(--primary-color);
+            border-radius: 50%;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            font-size: 15px;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        textarea.form-control {
+            resize: vertical;
+        }
+        
+        .btn-block {
+            width: 100%;
+            justify-content: center;
+        }
+        
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-col ul li a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+        
+        .footer-col ul li a:hover {
+            opacity: 1;
+            padding-left: 5px;
+        }
+        
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+        
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+        
+        .scroll-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: white;
+                flex-direction: column;
+                padding: 40px;
+                transition: var(--transition);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .hero-title {
+                font-size: 40px;
+            }
+            
+            .hero-subtitle {
+                font-size: 18px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Preloader -->
@@ -23,7 +592,7 @@
         <div class="spinner"></div>
     </div>
 
-    <!-- Header Section -->
+    <!-- Header -->
     <header id="header">
         <nav class="navbar">
             <div class="container">
@@ -39,102 +608,33 @@
                         <li><a href="#home" class="nav-link active">Home</a></li>
                         <li><a href="#about" class="nav-link">About</a></li>
                         <li><a href="#services" class="nav-link">Services</a></li>
-                        <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
-                        <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
                         <li><a href="#contact" class="nav-link">Contact</a></li>
                     </ul>
                     
-                    <div class="nav-buttons">
-                        <button class="theme-toggle" id="themeToggle">
-                            <i class="fas fa-moon"></i>
-                        </button>
-                        <button class="menu-toggle" id="menuToggle">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </button>
-                    </div>
+                    <button class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
             </div>
         </nav>
     </header>
 
-    <!-- Hero Slider Section -->
+    <!-- Hero Section -->
     <section id="home" class="hero-section">
-        <div class="hero-slider">
-            <!-- Slide 1 -->
-            <div class="slide active">
-                <div class="slide-bg" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
-                <div class="container">
-                    <div class="hero-content">
-                        <h1 class="hero-title animate-text">
-                            <span>Web Development</span>
-                            <span>Expert</span>
-                        </h1>
-                        <p class="hero-subtitle">Creating stunning websites that drive results</p>
-                        <div class="hero-buttons">
-                            <a href="#services" class="btn btn-primary">Explore Services</a>
-                            <a href="#contact" class="btn btn-outline">Get Started</a>
-                        </div>
-                    </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <div>Web Development &</div>
+                    <div>Digital Marketing Expert</div>
+                </h1>
+                <p class="hero-subtitle">Creating stunning websites that drive results</p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn btn-primary">Explore Services</a>
+                    <a href="#contact" class="btn btn-outline">Get Started</a>
                 </div>
             </div>
-
-            <!-- Slide 2 -->
-            <div class="slide">
-                <div class="slide-bg" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
-                <div class="container">
-                    <div class="hero-content">
-                        <h1 class="hero-title animate-text">
-                            <span>SEO & Digital</span>
-                            <span>Marketing</span>
-                        </h1>
-                        <p class="hero-subtitle">Boost your online presence and grow your business</p>
-                        <div class="hero-buttons">
-                            <a href="#services" class="btn btn-primary">Learn More</a>
-                            <a href="#portfolio" class="btn btn-outline">View Work</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slide 3 -->
-            <div class="slide">
-                <div class="slide-bg" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
-                <div class="container">
-                    <div class="hero-content">
-                        <h1 class="hero-title animate-text">
-                            <span>WordPress & Blogger</span>
-                            <span>Themes</span>
-                        </h1>
-                        <p class="hero-subtitle">Premium themes designed for success</p>
-                        <div class="hero-buttons">
-                            <a href="#portfolio" class="btn btn-primary">View Themes</a>
-                            <a href="#contact" class="btn btn-outline">Hire Me</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slider Controls -->
-        <div class="slider-controls">
-            <button class="slider-btn prev" id="prevSlide"><i class="fas fa-chevron-left"></i></button>
-            <button class="slider-btn next" id="nextSlide"><i class="fas fa-chevron-right"></i></button>
-        </div>
-
-        <!-- Slider Dots -->
-        <div class="slider-dots">
-            <span class="dot active" data-slide="0"></span>
-            <span class="dot" data-slide="1"></span>
-            <span class="dot" data-slide="2"></span>
-        </div>
-
-        <!-- Scroll Down Indicator -->
-        <div class="scroll-down">
-            <a href="#about">
-                <i class="fas fa-chevron-down"></i>
-            </a>
         </div>
     </section>
 
@@ -149,15 +649,7 @@
 
             <div class="about-content">
                 <div class="about-image">
-                    <div class="image-wrapper">
-                        <img src="images/profile.jpg" alt="Profile">
-                        <div class="image-overlay">
-                            <div class="overlay-content">
-                                <h3>8+ Years</h3>
-                                <p>Experience</p>
-                            </div>
-                        </div>
-                    </div>
+                    <img src="images/profile.jpg" alt="Profile" onerror="this.src='https://via.placeholder.com/400x500/667eea/ffffff?text=Your+Photo'">
                 </div>
 
                 <div class="about-text">
@@ -174,38 +666,8 @@
                             <p>Happy Clients</p>
                         </div>
                         <div class="stat-item">
-                            <h4><span class="counter">50</span>+</h4>
-                            <p>Awards Won</p>
-                        </div>
-                    </div>
-
-                    <div class="about-skills">
-                        <div class="skill-item">
-                            <div class="skill-header">
-                                <span>Web Development</span>
-                                <span>95%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="95"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-header">
-                                <span>SEO & Marketing</span>
-                                <span>90%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="90"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-header">
-                                <span>WordPress/Blogger</span>
-                                <span>98%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="98"></div>
-                            </div>
+                            <h4><span class="counter">8</span>+</h4>
+                            <p>Years Experience</p>
                         </div>
                     </div>
 
@@ -225,254 +687,69 @@
             </div>
 
             <div class="services-grid">
-                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-code"></i>
                     </div>
                     <h3>Web Development</h3>
-                    <p>Custom responsive websites built with modern technologies. Fast, secure, and user-friendly solutions tailored to your needs.</p>
-                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <p>Custom responsive websites built with modern technologies. Fast, secure, and user-friendly solutions.</p>
                 </div>
 
-                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-envelope"></i>
                     </div>
                     <h3>Email Marketing</h3>
-                    <p>Strategic email campaigns that engage your audience and drive conversions. Complete automation and analytics included.</p>
-                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <p>Strategic email campaigns that engage your audience and drive conversions with complete automation.</p>
                 </div>
 
-                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-search"></i>
                     </div>
                     <h3>Website SEO</h3>
-                    <p>Comprehensive SEO strategies to improve your search rankings and increase organic traffic. Technical and content optimization.</p>
-                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <p>Comprehensive SEO strategies to improve your search rankings and increase organic traffic.</p>
                 </div>
 
-                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="service-card">
                     <div class="service-icon">
                         <i class="fab fa-youtube"></i>
                     </div>
                     <h3>YouTube SEO</h3>
-                    <p>Video optimization for maximum visibility. Keyword research, metadata optimization, and proven growth strategies.</p>
-                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <p>Video optimization for maximum visibility. Keyword research, metadata optimization, and growth strategies.</p>
                 </div>
 
-                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-dollar-sign"></i>
                     </div>
                     <h3>CPA Marketing</h3>
-                    <p>Performance-based marketing campaigns. Expert in lead generation and conversion optimization strategies.</p>
-                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <p>Performance-based marketing campaigns. Expert in lead generation and conversion optimization.</p>
                 </div>
 
-                <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+                <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-handshake"></i>
                     </div>
                     <h3>Affiliate Marketing</h3>
-                    <p>Build profitable affiliate partnerships. Strategic promotion and commission-based revenue generation systems.</p>
-                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <p>Build profitable affiliate partnerships. Strategic promotion and commission-based revenue generation.</p>
                 </div>
 
-                <div class="service-card" data-aos="fade-up" data-aos-delay="700">
+                <div class="service-card">
                     <div class="service-icon">
                         <i class="fab fa-blogger"></i>
                     </div>
                     <h3>Blogger Development</h3>
-                    <p>Custom Blogger templates with modern features. Premium designs optimized for performance and monetization.</p>
-                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <p>Custom Blogger templates with modern features. Premium designs optimized for performance.</p>
                 </div>
 
-                <div class="service-card" data-aos="fade-up" data-aos-delay="800">
+                <div class="service-card">
                     <div class="service-icon">
                         <i class="fab fa-wordpress"></i>
                     </div>
                     <h3>WordPress Themes</h3>
-                    <p>Professional WordPress theme development. Custom solutions tailored to your business needs and brand identity.</p>
-                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <p>Professional WordPress theme development. Custom solutions tailored to your business needs.</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio-section section-padding">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-subtitle">My Work</span>
-                <h2 class="section-title">Recent Projects</h2>
-                <p class="section-description">Check out some of my latest projects</p>
-            </div>
-
-            <div class="portfolio-filters">
-                <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="web">Web Design</button>
-                <button class="filter-btn" data-filter="wordpress">WordPress</button>
-                <button class="filter-btn" data-filter="blogger">Blogger</button>
-                <button class="filter-btn" data-filter="seo">SEO</button>
-            </div>
-
-            <div class="portfolio-grid">
-                <div class="portfolio-item" data-category="web wordpress">
-                    <div class="portfolio-image">
-                        <img src="https://via.placeholder.com/400x300/667eea/ffffff?text=Project+1" alt="Project 1">
-                        <div class="portfolio-overlay">
-                            <div class="overlay-content">
-                                <h3>E-Commerce Website</h3>
-                                <p>WordPress Development</p>
-                                <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="blogger">
-                    <div class="portfolio-image">
-                        <img src="https://via.placeholder.com/400x300/f5576c/ffffff?text=Project+2" alt="Project 2">
-                        <div class="portfolio-overlay">
-                            <div class="overlay-content">
-                                <h3>Magazine Blog Theme</h3>
-                                <p>Blogger Template</p>
-                                <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="seo">
-                    <div class="portfolio-image">
-                        <img src="https://via.placeholder.com/400x300/00f2fe/ffffff?text=Project+3" alt="Project 3">
-                        <div class="portfolio-overlay">
-                            <div class="overlay-content">
-                                <h3>SEO Campaign</h3>
-                                <p>Digital Marketing</p>
-                                <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="web">
-                    <div class="portfolio-image">
-                        <img src="https://via.placeholder.com/400x300/764ba2/ffffff?text=Project+4" alt="Project 4">
-                        <div class="portfolio-overlay">
-                            <div class="overlay-content">
-                                <h3>Corporate Website</h3>
-                                <p>Web Development</p>
-                                <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="wordpress">
-                    <div class="portfolio-image">
-                        <img src="https://via.placeholder.com/400x300/f093fb/ffffff?text=Project+5" alt="Project 5">
-                        <div class="portfolio-overlay">
-                            <div class="overlay-content">
-                                <h3>Business Theme</h3>
-                                <p>WordPress Theme</p>
-                                <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="blogger seo">
-                    <div class="portfolio-image">
-                        <img src="https://via.placeholder.com/400x300/4facfe/ffffff?text=Project+6" alt="Project 6">
-                        <div class="portfolio-overlay">
-                            <div class="overlay-content">
-                                <h3>SEO Blog</h3>
-                                <p>Blogger + SEO</p>
-                                <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials-section section-padding">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-subtitle">Client Reviews</span>
-                <h2 class="section-title">What Clients Say</h2>
-                <p class="section-description">Trusted by businesses worldwide</p>
-            </div>
-
-            <div class="testimonials-slider">
-                <div class="testimonial-card active">
-                    <div class="testimonial-content">
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>"Excellent work! The website exceeded our expectations. Professional, responsive, and delivered on time. Highly recommended for any web development project."</p>
-                        <div class="client-info">
-                            <img src="https://via.placeholder.com/80x80/667eea/ffffff?text=JD" alt="Client">
-                            <div class="client-details">
-                                <h4>John Doe</h4>
-                                <p>CEO, Tech Company</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>"Outstanding SEO results! Our organic traffic increased by 300% in just 3 months. The team is knowledgeable, professional, and truly cares about results."</p>
-                        <div class="client-info">
-                            <img src="https://via.placeholder.com/80x80/f5576c/ffffff?text=SS" alt="Client">
-                            <div class="client-details">
-                                <h4>Sarah Smith</h4>
-                                <p>Marketing Director</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>"The WordPress theme is absolutely beautiful and works flawlessly. Great attention to detail and excellent customer support. Worth every penny!"</p>
-                        <div class="client-info">
-                            <img src="https://via.placeholder.com/80x80/00f2fe/ffffff?text=MJ" alt="Client">
-                            <div class="client-details">
-                                <h4>Michael Johnson</h4>
-                                <p>Blogger</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-controls">
-                <button class="testimonial-btn prev" id="prevTestimonial"><i class="fas fa-chevron-left"></i></button>
-                <button class="testimonial-btn next" id="nextTestimonial"><i class="fas fa-chevron-right"></i></button>
             </div>
         </div>
     </section>
@@ -523,13 +800,11 @@
 
                 <div class="contact-form">
                     <form id="contactForm">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" name="email" class="form-control" placeholder="Your Email" required>
-                            </div>
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" class="form-control" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
                             <input type="text" name="subject" class="form-control" placeholder="Subject" required>
@@ -542,25 +817,18 @@
                             <i class="fas fa-paper-plane"></i>
                         </button>
                     </form>
-                    <div class="form-message"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer Section -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-col">
                     <h3>About</h3>
                     <p>Professional web development and digital marketing services. Helping businesses grow online with cutting-edge solutions.</p>
-                    <div class="footer-social">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                    </div>
                 </div>
 
                 <div class="footer-col">
@@ -569,7 +837,6 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#services">Services</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -581,32 +848,110 @@
                         <li><a href="#services">SEO Services</a></li>
                         <li><a href="#services">Email Marketing</a></li>
                         <li><a href="#services">WordPress Themes</a></li>
-                        <li><a href="#services">Blogger Templates</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h3>Newsletter</h3>
-                    <p>Subscribe to get latest updates and news</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Your Email" required>
-                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                    </form>
+                    <h3>Contact</h3>
+                    <p>Email: your.email@example.com</p>
+                    <p>Phone: +880 1XXX-XXXXXX</p>
+                    <p>Location: Dhaka, Bangladesh</p>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2024 Digital Expert. All Rights Reserved. | Designed with <i class="fas fa-heart"></i> by <a href="#">Lizon Web Studio</a></p>
+                <p>&copy; 2024 Digital Expert. All Rights Reserved. | Designed with <i class="fas fa-heart"></i> by Lizon Web Studio</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scroll To Top Button -->
+    <!-- Scroll To Top -->
     <button class="scroll-top" id="scrollTop">
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- Custom JS -->
-    <script src="js/script.js"></script>
+    <!-- JavaScript - All code embedded -->
+    <script>
+        // Preloader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('preloader').classList.add('hidden');
+            }, 1000);
+        });
+
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    const headerHeight = document.getElementById('header').offsetHeight;
+                    const targetPosition = targetSection.offsetTop - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+
+        // Active Nav Link on Scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const scrollY = window.pageYOffset;
+            
+            sections.forEach(section => {
+                const sectionHeight = section.offsetHeight;
+                const sectionTop = section.offsetTop - 100;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    document.querySelector('.nav-link.active')?.classList.remove('active');
+                    document.querySelector(`.nav-link[href="#${sectionId}"]`)?.classList.add('active');
+                }
+            });
+        });
+
+        // Scroll To Top Button
+        const scrollTopBtn = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 500) {
+                scrollTopBtn.classList.add('show');
+            } else {
+                scrollTopBtn.classList.remove('show');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Contact Form
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            e.target.reset();
+        });
+
+        // Console Message
+        console.log('%c🚀 Portfolio Website Loaded Successfully!', 'color: #667eea; font-size: 20px; font-weight: bold;');
+    </script>
 </body>
 </html>
